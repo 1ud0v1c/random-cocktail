@@ -8,5 +8,7 @@ class RandomActivity : AppCompatActivity() {
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
         setContentView(R.layout.activity_random)
+
+        // TODO: https://www.thecocktaildb.com/api/json/v1/1/random.php
     }
 }

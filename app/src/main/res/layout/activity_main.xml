@@ -15,11 +15,13 @@
             android:orientation="vertical">
 
         <Button
+                android:id="@+id/button_listing_cocktails"
                 android:layout_height="wrap_content"
                 android:layout_width="match_parent"
                 android:text="@string/main_button_cocktail_list"/>
 
         <Button
+                android:id="@+id/button_random_cocktail"
                 android:layout_height="wrap_content"
                 android:layout_width="match_parent"
                 android:layout_marginTop="@dimen/activity_margin"
