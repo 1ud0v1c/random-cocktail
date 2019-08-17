@@ -3,4 +3,9 @@
     <dimen name="activity_little_margin">8dp</dimen>
     <dimen name="activity_margin">16dp</dimen>
     <dimen name="activity_big_margin">24dp</dimen>
+
+    <dimen name="grid_item_padding">2dp</dimen>
+
+    <dimen name="listing_activity_drink_item_height">175dp</dimen>
+    <dimen name="listing_activity_drink_item_name_padding">12dp</dimen>
 </resources>

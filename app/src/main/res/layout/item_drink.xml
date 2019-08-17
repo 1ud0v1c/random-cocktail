@@ -1,0 +1,25 @@
+<?xml version="1.0" encoding="utf-8"?>
+<RelativeLayout
+        xmlns:android="http://schemas.android.com/apk/res/android"
+        android:orientation="vertical"
+        android:layout_width="match_parent"
+        android:layout_height="@dimen/listing_activity_drink_item_height">
+
+    <ImageView
+            android:id="@+id/image_view_drink_image"
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            android:scaleType="centerCrop"/>
+
+    <TextView
+            android:id="@+id/text_view_drink_name"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:textColor="@color/material_color_grey_50"
+            android:background="@color/material_color_black_87_percent"
+            android:padding="@dimen/listing_activity_drink_item_name_padding"
+            android:textAlignment="center"
+            android:layout_centerHorizontal="true"
+            android:layout_alignParentBottom="true"/>
+
+</RelativeLayout>

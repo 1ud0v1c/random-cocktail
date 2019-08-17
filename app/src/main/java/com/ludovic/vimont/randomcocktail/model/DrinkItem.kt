@@ -1,6 +1,6 @@
 package com.ludovic.vimont.randomcocktail.model
 
-data class DrinksItem(
+data class DrinkItem(
 	val strDrinkFR: Any? = null,
 	val strInstructionsDE: String? = null,
 	val strDrinkZHHANS: Any? = null,
@@ -55,7 +55,21 @@ data class DrinksItem(
 	val strMeasure14: Any? = null,
 	val strMeasure15: Any? = null
 ) {
-	private val TAG = DrinksItem::javaClass.name
+	private val TAG = DrinkItem::javaClass.name
+
+	fun getName(): String {
+		strDrink?.let {
+			return it
+		}
+		return ""
+	}
+
+	fun getImage(): String {
+		strDrinkThumb?.let {
+			return it
+		}
+		return ""
+	}
 
 	override fun toString(): String {
 		return "$TAG [ id=$idDrink, name=$strDrink, img=$strDrinkThumb ]"

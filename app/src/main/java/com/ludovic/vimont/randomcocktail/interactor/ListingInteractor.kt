@@ -3,7 +3,7 @@ package com.ludovic.vimont.randomcocktail.interactor
 import com.github.kittinunf.fuel.httpGet
 import com.google.gson.Gson
 import com.ludovic.vimont.randomcocktail.model.APIResponse
-import com.ludovic.vimont.randomcocktail.model.DrinksItem
+import com.ludovic.vimont.randomcocktail.model.DrinkItem
 import kotlinx.coroutines.Dispatchers
 import kotlinx.coroutines.GlobalScope
 import kotlinx.coroutines.launch
@@ -13,7 +13,7 @@ class ListingInteractor {
     private val gson = Gson()
 
     interface OnListingFinishedListener {
-        fun onSuccess(drinks: List<DrinksItem>)
+        fun onSuccess(drinks: List<DrinkItem>)
         fun onFail(error: String)
     }
 
@@ -31,10 +31,12 @@ class ListingInteractor {
             println(result.get())
 
             val apiResponse = gson.fromJson(result.get(), APIResponse::class.java)
-            if (apiResponse.drinks != null) {
-                onListingFinishedListener.onSuccess(apiResponse.drinks)
-            } else {
-                onListingFinishedListener.onFail("$statusCode")
+            launch(Dispatchers.Main) {
+                if (apiResponse.drinks != null) {
+                    onListingFinishedListener.onSuccess(apiResponse.drinks)
+                } else {
+                    onListingFinishedListener.onFail("$statusCode")
+                }
             }
         }
     }

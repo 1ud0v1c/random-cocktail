@@ -1,7 +1,7 @@
 package com.ludovic.vimont.randomcocktail.presenter
 
 import com.ludovic.vimont.randomcocktail.interactor.ListingInteractor
-import com.ludovic.vimont.randomcocktail.model.DrinksItem
+import com.ludovic.vimont.randomcocktail.model.DrinkItem
 import com.ludovic.vimont.randomcocktail.view.ListingView
 
 class ListingPresenter(private var listingView: ListingView,
@@ -10,10 +10,11 @@ class ListingPresenter(private var listingView: ListingView,
         listingInteractor.listing(this)
     }
 
-    override fun onSuccess(drinks: List<DrinksItem>) {
+    override fun onSuccess(drinks: List<DrinkItem>) {
         drinks.forEach { drink ->
             println(drink)
         }
+        listingView.setCocktails(drinks)
     }
 
     override fun onFail(error: String) {
