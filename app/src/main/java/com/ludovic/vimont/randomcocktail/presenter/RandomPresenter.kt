@@ -11,9 +11,9 @@ class RandomPresenter(private val randomView: RandomView,
         randomInteractor.random(context, this)
     }
 
-    // TODO:
-    override fun onSuccess(drink: DrinkItem) {
-        println(drink)
+    override fun onSuccess(drinkItem: DrinkItem) {
+        println(drinkItem)
+        randomView.displayCocktail(drinkItem)
     }
 
     // TODO

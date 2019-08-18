@@ -15,7 +15,7 @@ class RandomInteractor {
     private val ROOT_URL_RANDOM_COCKTAIL = "https://www.thecocktaildb.com/api/json/v1/1/random.php"
 
     interface OnRandomFinishedListener {
-        fun onSuccess(drink: DrinkItem)
+        fun onSuccess(drinkItem: DrinkItem)
         fun onFail(error: String)
     }
 

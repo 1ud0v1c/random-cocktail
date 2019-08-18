@@ -1,6 +1,9 @@
 <resources>
     <string name="app_name">RandomCocktail</string>
 
-    <string name="main_button_cocktail_list">See cocktails list</string>
-    <string name="main_button_random_cocktail">Random cocktail</string>
+    <string name="activity_main_button_cocktail_list">See cocktails list</string>
+    <string name="activity_main_button_random_cocktail">Random cocktail</string>
+
+    <string name="activity_random_ingredients_title">Ingredients:</string>
+    <string name="activity_random_instructions_title">Instructions:</string>
 </resources>

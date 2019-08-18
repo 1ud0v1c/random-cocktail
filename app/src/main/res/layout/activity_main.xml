@@ -18,14 +18,14 @@
                 android:id="@+id/button_listing_cocktails"
                 android:layout_height="wrap_content"
                 android:layout_width="match_parent"
-                android:text="@string/main_button_cocktail_list"/>
+                android:text="@string/activity_main_button_cocktail_list"/>
 
         <Button
                 android:id="@+id/button_random_cocktail"
                 android:layout_height="wrap_content"
                 android:layout_width="match_parent"
                 android:layout_marginTop="@dimen/activity_margin"
-                android:text="@string/main_button_random_cocktail"/>
+                android:text="@string/activity_main_button_random_cocktail"/>
 
     </LinearLayout>
 

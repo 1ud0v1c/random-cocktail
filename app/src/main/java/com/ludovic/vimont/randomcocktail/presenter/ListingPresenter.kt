@@ -16,6 +16,7 @@ class ListingPresenter(private var listingView: ListingView,
         listingView.setCocktails(drinks)
     }
 
+    // TODO
     override fun onFail(error: String) {
         println(error)
     }
