@@ -66,7 +66,6 @@ class ListingInteractor {
             drinks.sortBy { it.strDrink }
 
             launch(Dispatchers.Main) {
-                println("--------------- ${drinks.size} ---------------")
                 onListingFinishedListener.onSuccess(drinks)
                 /* if (apiResponse.drinks != null) {
                    println("--------------- ${apiResponse.drinks.size} ---------------")

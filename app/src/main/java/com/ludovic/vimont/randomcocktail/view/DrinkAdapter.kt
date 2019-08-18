@@ -8,7 +8,6 @@ import android.widget.TextView
 import androidx.recyclerview.widget.RecyclerView
 import com.ludovic.vimont.randomcocktail.R
 import com.ludovic.vimont.randomcocktail.model.DrinkItem
-import com.squareup.picasso.NetworkPolicy
 import com.squareup.picasso.Picasso
 
 class DrinkAdapter(private val drinks: List<DrinkItem>) : RecyclerView.Adapter<DrinkAdapter.DrinkViewHolder>() {

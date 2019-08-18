@@ -11,9 +11,7 @@ class ListingPresenter(private var listingView: ListingView,
     }
 
     override fun onSuccess(drinks: List<DrinkItem>) {
-        drinks.forEach { drink ->
-            println(drink)
-        }
+        println("--------------- ${drinks.size} ---------------")
         listingView.setCocktails(drinks)
     }
 
