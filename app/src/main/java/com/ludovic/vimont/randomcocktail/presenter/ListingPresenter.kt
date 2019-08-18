@@ -7,7 +7,7 @@ import com.ludovic.vimont.randomcocktail.view.ListingView
 
 class ListingPresenter(private var listingView: ListingView,
                        private val listingInteractor: ListingInteractor): ListingInteractor.OnListingFinishedListener {
-    fun onCreate(context: Context) {
+    fun loadDrinks(context: Context) {
         listingInteractor.listing(context, this)
     }
 

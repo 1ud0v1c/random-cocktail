@@ -25,7 +25,7 @@ class ListingActivity : AppCompatActivity(), ListingView {
     }
 
     override fun onCreate() {
-        listingPresenter.onCreate(applicationContext)
+        listingPresenter.loadDrinks(applicationContext)
     }
 
     override fun setCocktails(drinks: List<DrinkItem>) {

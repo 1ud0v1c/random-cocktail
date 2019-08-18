@@ -7,7 +7,7 @@ import com.ludovic.vimont.randomcocktail.view.RandomView
 
 class RandomPresenter(private val randomView: RandomView,
                       private val randomInteractor: RandomInteractor): RandomInteractor.OnRandomFinishedListener {
-    fun onCreate(context: Context) {
+    fun loadDrink(context: Context) {
         randomInteractor.random(context, this)
     }
 

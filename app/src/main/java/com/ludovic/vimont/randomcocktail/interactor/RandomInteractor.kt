@@ -49,7 +49,7 @@ class RandomInteractor {
         println(result.get())
 
         val apiResponse = GsonHelper.fromJson(result.get(), APIResponse::class.java)
-        if (apiResponse.drinks != null) {
+        if (apiResponse.drinks != null && apiResponse.drinks.isNotEmpty()) {
             return apiResponse.drinks[0]
         }
         return null
