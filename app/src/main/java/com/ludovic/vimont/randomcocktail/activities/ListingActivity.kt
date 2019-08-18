@@ -16,6 +16,7 @@ class ListingActivity : AppCompatActivity(), ListingView {
     private val listingPresenter = ListingPresenter(this, ListingInteractor())
     private lateinit var recyclerView: RecyclerView
 
+    // TODO: add filtering by name
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
         setContentView(R.layout.activity_listing)

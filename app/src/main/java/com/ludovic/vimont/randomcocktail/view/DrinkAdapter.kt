@@ -20,7 +20,6 @@ class DrinkAdapter(private val drinks: List<DrinkItem>) : RecyclerView.Adapter<D
     override fun onBindViewHolder(holder: DrinkViewHolder, position: Int) {
         Picasso.get()
             .load(drinks[position].getImage())
-            .networkPolicy(NetworkPolicy.OFFLINE)
             .into(holder.imageView)
         holder.textView.text = drinks[position].getName()
     }
