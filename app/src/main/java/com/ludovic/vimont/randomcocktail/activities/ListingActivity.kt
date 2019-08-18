@@ -20,7 +20,6 @@ class ListingActivity : AppCompatActivity(), ListingView {
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
         setContentView(R.layout.activity_listing)
-
         recyclerView = findViewById(R.id.recycler_view)
         onCreate()
     }

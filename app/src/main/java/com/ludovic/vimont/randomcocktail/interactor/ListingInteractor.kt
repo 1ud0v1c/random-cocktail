@@ -2,7 +2,7 @@ package com.ludovic.vimont.randomcocktail.interactor
 
 import android.content.Context
 import com.github.kittinunf.fuel.httpGet
-import com.google.gson.Gson
+import com.ludovic.vimont.randomcocktail.helper.GsonHelper
 import com.ludovic.vimont.randomcocktail.helper.NetworkHelper
 import com.ludovic.vimont.randomcocktail.model.APIResponse
 import com.ludovic.vimont.randomcocktail.model.DrinkItem
@@ -11,7 +11,6 @@ import kotlinx.coroutines.*
 class ListingInteractor {
     private val ROOT_URL_COCKTAIL = "https://www.thecocktaildb.com/api/json/v1/1/filter.php?c=Cocktail"
     private val ROOT_URL_ORDINARY_DRINK = "https://www.thecocktaildb.com/api/json/v1/1/filter.php?c=Ordinary_Drink"
-    private val gson = Gson()
 
     interface OnListingFinishedListener {
         fun onSuccess(drinks: List<DrinkItem>)
@@ -50,6 +49,7 @@ class ListingInteractor {
         }
     }
 
+    // TODO: handle error
     private fun getDrinks(url: String): List<DrinkItem> {
         val (_, response, result) = url
             .httpGet()
@@ -61,7 +61,7 @@ class ListingInteractor {
         println(result.component2())
         println(result.get())
 
-        val apiResponse = gson.fromJson(result.get(), APIResponse::class.java)
+        val apiResponse = GsonHelper.fromJson(result.get(), APIResponse::class.java)
         if (apiResponse.drinks != null) {
             return apiResponse.drinks
         }
