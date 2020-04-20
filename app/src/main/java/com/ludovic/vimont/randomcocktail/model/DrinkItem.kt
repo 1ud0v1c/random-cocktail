@@ -1,6 +1,7 @@
 package com.ludovic.vimont.randomcocktail.model
 
 import com.ludovic.vimont.randomcocktail.helper.ifLet
+import java.io.Serializable
 
 data class DrinkItem(
     val idDrink: String? = null,
@@ -64,8 +65,7 @@ data class DrinkItem(
     val strMeasure12: String? = null,
     val strMeasure13: String? = null,
     val strMeasure14: String? = null,
-    val strMeasure15: String? = null
-) {
+    val strMeasure15: String? = null): Serializable {
     private val TAG = DrinkItem::javaClass.name
 
     fun getName(): String {
@@ -89,7 +89,7 @@ data class DrinkItem(
         return ""
     }
 
-    // TODO: improve with reflection
+    // TODO: improve with reflection?
     fun getIngredients(): List<Ingredient> {
         val ingredients = ArrayList<Ingredient>()
         addIngredient(ingredients, strIngredient1, strMeasure1)

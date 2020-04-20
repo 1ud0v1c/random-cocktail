@@ -1,10 +1,12 @@
-package com.ludovic.vimont.randomcocktail.interactor
+package com.ludovic.vimont.randomcocktail.random
 
 import android.content.Context
+import android.content.Intent
 import com.github.kittinunf.fuel.httpGet
 import com.ludovic.vimont.randomcocktail.helper.GsonHelper
 import com.ludovic.vimont.randomcocktail.helper.NetworkHelper
 import com.ludovic.vimont.randomcocktail.model.APIResponse
+import com.ludovic.vimont.randomcocktail.model.Constants
 import com.ludovic.vimont.randomcocktail.model.DrinkItem
 import kotlinx.coroutines.Dispatchers
 import kotlinx.coroutines.GlobalScope
@@ -19,19 +21,33 @@ class RandomInteractor {
         fun onFail(error: String)
     }
 
-    fun random(context: Context, onRandomFinishedListener: OnRandomFinishedListener) {
+    fun random(
+        context: Context,
+        intent: Intent,
+        onRandomFinishedListener: OnRandomFinishedListener
+    ) {
         GlobalScope.launch(Dispatchers.Default) {
-            if (!NetworkHelper.isOnline(context)) {
-                onRandomFinishedListener.onFail("You need to activate internet first.")
-                coroutineContext.cancel()
-            }
+            if (intent.hasExtra(Constants.keyDrinkItem)) {
+                val drinkItem: DrinkItem? = intent.getSerializableExtra(Constants.keyDrinkItem) as DrinkItem?
+                launch(Dispatchers.Main) {
+                    drinkItem?.let {
+                        println(it.strInstructions)
+                        onRandomFinishedListener.onSuccess(drinkItem)
+                    }
+                }
+            } else {
+                if (!NetworkHelper.isOnline(context)) {
+                    onRandomFinishedListener.onFail("You need to activate internet first.")
+                    coroutineContext.cancel()
+                }
 
-            val drinkItem = getRandomDrink(ROOT_URL_RANDOM_COCKTAIL)
-            launch(Dispatchers.Main) {
-                if (drinkItem != null) {
-                    onRandomFinishedListener.onSuccess(drinkItem)
-                } else {
-                    onRandomFinishedListener.onFail("An error occurred while fetching a random cocktail.")
+                val drinkItem: DrinkItem? = getRandomDrink(ROOT_URL_RANDOM_COCKTAIL)
+                launch(Dispatchers.Main) {
+                    if (drinkItem != null) {
+                        onRandomFinishedListener.onSuccess(drinkItem)
+                    } else {
+                        onRandomFinishedListener.onFail("An error occurred while fetching a random cocktail.")
+                    }
                 }
             }
         }

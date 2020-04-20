@@ -1,4 +1,4 @@
-package com.ludovic.vimont.randomcocktail.view
+package com.ludovic.vimont.randomcocktail.listing
 
 import com.ludovic.vimont.randomcocktail.model.DrinkItem
 

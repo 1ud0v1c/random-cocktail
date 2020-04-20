@@ -1,32 +1,64 @@
 <?xml version="1.0" encoding="utf-8"?>
-<RelativeLayout
-        xmlns:android="http://schemas.android.com/apk/res/android"
-        xmlns:tools="http://schemas.android.com/tools"
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
         xmlns:app="http://schemas.android.com/apk/res-auto"
+        xmlns:tools="http://schemas.android.com/tools"
         android:layout_width="match_parent"
         android:layout_height="match_parent"
+        android:layout_centerHorizontal="true"
+        android:layout_centerVertical="true"
+        android:background="@drawable/main_activity_background"
+        android:gravity="center"
+        android:orientation="vertical"
+        android:padding="@dimen/activity_margin"
         tools:context=".MainActivity">
 
-    <LinearLayout
-            android:layout_width="wrap_content"
+    <com.ludovic.vimont.randomcocktail.ui.view.TouchableLinearLayout
+            android:id="@+id/linear_layout_listing_cocktails"
+            android:layout_width="match_parent"
             android:layout_height="wrap_content"
-            android:layout_centerVertical="true"
-            android:layout_centerHorizontal="true"
-            android:orientation="vertical">
+            android:background="@drawable/button_transparent_white_border"
+            android:gravity="center_horizontal"
+            android:orientation="horizontal">
+
+        <ImageView
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_gravity="center_vertical"
+                app:srcCompat="@drawable/ic_list" />
 
         <Button
-                android:id="@+id/button_listing_cocktails"
+                android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
-                android:layout_width="match_parent"
-                android:text="@string/activity_main_button_cocktail_list"/>
+                android:layout_marginStart="@dimen/activity_margin"
+                android:background="@android:color/transparent"
+                android:text="@string/activity_main_button_cocktail_list"
+                android:textColor="@color/material_color_white" />
+
+    </com.ludovic.vimont.randomcocktail.ui.view.TouchableLinearLayout>
+
+    <com.ludovic.vimont.randomcocktail.ui.view.TouchableLinearLayout
+            android:id="@+id/linear_layout_random_cocktail"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="@dimen/activity_margin"
+            android:background="@drawable/button_transparent_white_border"
+            android:gravity="center_horizontal"
+            android:orientation="horizontal">
+
+        <ImageView
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_gravity="center_vertical"
+                app:srcCompat="@drawable/ic_random" />
 
         <Button
-                android:id="@+id/button_random_cocktail"
+                android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
-                android:layout_width="match_parent"
-                android:layout_marginTop="@dimen/activity_margin"
-                android:text="@string/activity_main_button_random_cocktail"/>
+                android:layout_marginStart="@dimen/activity_margin"
+                android:background="@android:color/transparent"
+                android:text="@string/activity_main_button_random_cocktail"
+                android:textColor="@color/material_color_white" />
 
-    </LinearLayout>
+    </com.ludovic.vimont.randomcocktail.ui.view.TouchableLinearLayout>
 
-</RelativeLayout>
+</LinearLayout>

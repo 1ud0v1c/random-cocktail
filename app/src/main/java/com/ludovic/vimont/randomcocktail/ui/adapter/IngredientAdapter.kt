@@ -1,4 +1,4 @@
-package com.ludovic.vimont.randomcocktail.view
+package com.ludovic.vimont.randomcocktail.ui.adapter
 
 import android.view.LayoutInflater
 import android.view.View
@@ -11,7 +11,9 @@ import com.ludovic.vimont.randomcocktail.model.Ingredient
 class IngredientAdapter(private val ingredients: List<Ingredient>) : RecyclerView.Adapter<IngredientAdapter.IngredientViewHolder>() {
     override fun onCreateViewHolder(parent: ViewGroup, viewType: Int): IngredientViewHolder {
         val itemView = LayoutInflater.from(parent.context).inflate(R.layout.item_ingredient, parent, false)
-        return IngredientViewHolder(itemView)
+        return IngredientViewHolder(
+            itemView
+        )
     }
 
     override fun onBindViewHolder(holder: IngredientViewHolder, position: Int) {

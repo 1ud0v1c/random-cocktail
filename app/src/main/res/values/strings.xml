@@ -1,5 +1,5 @@
 <resources>
-    <string name="app_name">RandomCocktail</string>
+    <string name="app_name">Random Cocktail</string>
     <string name="menu_action_refresh">Refresh</string>
 
     <string name="activity_main_button_cocktail_list">See cocktails list</string>

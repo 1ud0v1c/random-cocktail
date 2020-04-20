@@ -1,4 +1,4 @@
-package com.ludovic.vimont.randomcocktail.view
+package com.ludovic.vimont.randomcocktail.ui.view
 
 import android.graphics.Rect
 import android.view.View

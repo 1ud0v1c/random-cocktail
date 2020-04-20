@@ -1,9 +1,9 @@
-package com.ludovic.vimont.randomcocktail.presenter
+package com.ludovic.vimont.randomcocktail.listing
 
 import android.content.Context
-import com.ludovic.vimont.randomcocktail.interactor.ListingInteractor
+import com.ludovic.vimont.randomcocktail.listing.ListingInteractor
 import com.ludovic.vimont.randomcocktail.model.DrinkItem
-import com.ludovic.vimont.randomcocktail.view.ListingView
+import com.ludovic.vimont.randomcocktail.listing.ListingView
 
 class ListingPresenter(private var listingView: ListingView,
                        private val listingInteractor: ListingInteractor): ListingInteractor.OnListingFinishedListener {
