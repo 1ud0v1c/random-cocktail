@@ -3,7 +3,6 @@ package com.ludovic.vimont.randomcocktail.listing
 import android.content.Intent
 import androidx.appcompat.app.AppCompatActivity
 import android.os.Bundle
-import android.util.Log
 import androidx.recyclerview.widget.GridLayoutManager
 import androidx.recyclerview.widget.RecyclerView
 import com.ludovic.vimont.randomcocktail.R
@@ -21,7 +20,6 @@ class ListingActivity : AppCompatActivity(), ListingView, DrinkAdapter.OnItemCli
     //      by name search
     //      by type (alcohol, non)
     // TODO: add favorite features
-    // TODO: add click on item
     // TODO: display stateful loading
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
@@ -48,7 +46,7 @@ class ListingActivity : AppCompatActivity(), ListingView, DrinkAdapter.OnItemCli
 
     override fun onClick(drink: DrinkItem) {
         val intent = Intent(this, RandomActivity::class.java)
-        intent.putExtra(Constants.keyDrinkItem, drink)
+        intent.putExtra(Constants.KEY_DRINK_ITEM, drink)
         startActivity(intent)
     }
 }

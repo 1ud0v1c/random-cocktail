@@ -12,7 +12,6 @@ class ListingPresenter(private var listingView: ListingView,
     }
 
     override fun onSuccess(drinks: List<DrinkItem>) {
-        println("--------------- ${drinks.size} ---------------")
         listingView.setCocktails(drinks)
     }
 

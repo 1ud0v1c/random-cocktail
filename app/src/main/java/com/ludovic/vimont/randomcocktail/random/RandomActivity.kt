@@ -68,8 +68,8 @@ class RandomActivity : AppCompatActivity(),
     }
 
     override fun onRefresh() {
-        if (intent.hasExtra(Constants.keyDrinkItem)) {
-            intent.removeExtra(Constants.keyDrinkItem)
+        if (intent.hasExtra(Constants.KEY_DRINK_ITEM)) {
+            intent.removeExtra(Constants.KEY_DRINK_ITEM)
         }
         randomPresenter.loadDrink(applicationContext, intent)
     }
@@ -80,7 +80,6 @@ class RandomActivity : AppCompatActivity(),
         textViewDrinkName.text = drinkItem.getName()
         Picasso.get()
             .load(drinkItem.getImage())
-            // .placeholder(R.drawable.placeholder)
             .into(imageViewDrinkImage)
         textViewDrinkInstructions.text = drinkItem.getInstructions()
         recyclerViewIngredients.adapter =

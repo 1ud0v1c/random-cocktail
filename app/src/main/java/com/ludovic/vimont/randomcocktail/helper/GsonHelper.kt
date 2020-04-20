@@ -6,6 +6,7 @@ import com.ludovic.vimont.randomcocktail.model.DrinkItem
 
 inline fun <reified T> Gson.fromJson(json: String): T = this.fromJson<T>(json, object: TypeToken<T>() {}.type)
 
+// TODO: improve handling
 class GsonHelper {
     companion object {
         val gson = Gson()
