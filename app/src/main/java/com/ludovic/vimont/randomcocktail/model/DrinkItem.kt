@@ -110,6 +110,13 @@ data class DrinkItem(
         return ingredients
     }
 
+    fun containsAlcohol(): Boolean {
+        strAlcoholic?.let { containsAlcohol ->
+            return !containsAlcohol.contains("Non")
+        }
+        return true
+    }
+
     private fun addIngredient(ingredients: ArrayList<Ingredient>, name: String?, measure: String?) {
         ifLet(name, measure) { (name, measure) ->
             if (name.isNotEmpty() && measure.isNotEmpty()) {

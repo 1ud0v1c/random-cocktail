@@ -56,7 +56,7 @@ class RandomActivity : AppCompatActivity(),
     }
 
     override fun onCreateOptionsMenu(menu: Menu): Boolean {
-        menuInflater.inflate(R.menu.action_bar_menu, menu)
+        menuInflater.inflate(R.menu.random_activity_action_bar_menu, menu)
         return true
     }
 
