@@ -32,11 +32,11 @@ class DrinkAdapter(private val drinks: List<DrinkItem>) : RecyclerView.Adapter<D
         )
     }
 
-    // TODO: add placeHolder
     override fun onBindViewHolder(holder: DrinkViewHolder, position: Int) {
         val drink: DrinkItem = filteredDrinks[position]
         Picasso.get()
             .load(drink.getImage())
+            .placeholder(R.drawable.ic_placeholder)
             .into(holder.imageView)
         holder.textView.text = drink.getName()
         holder.itemView.setOnClickListener {

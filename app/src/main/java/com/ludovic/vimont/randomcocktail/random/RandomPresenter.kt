@@ -5,8 +5,7 @@ import android.content.Intent
 import com.ludovic.vimont.randomcocktail.model.DrinkItem
 
 class RandomPresenter(private val randomView: RandomView,
-                      private val randomInteractor: RandomInteractor
-): RandomInteractor.OnRandomFinishedListener {
+                      private val randomInteractor: RandomInteractor): RandomInteractor.OnRandomFinishedListener {
     fun loadDrink(context: Context, intent: Intent) {
         randomInteractor.random(context, intent, this)
     }

@@ -9,7 +9,7 @@
             android:id="@+id/image_view_drink_image"
             android:layout_width="match_parent"
             android:layout_height="match_parent"
-            android:scaleType="centerCrop"/>
+            android:scaleType="centerCrop" />
 
     <TextView
             android:id="@+id/text_view_drink_name"

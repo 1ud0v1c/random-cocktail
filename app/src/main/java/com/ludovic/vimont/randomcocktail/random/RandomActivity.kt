@@ -74,12 +74,12 @@ class RandomActivity : AppCompatActivity(),
         randomPresenter.loadDrink(applicationContext, intent)
     }
 
-    // TODO: add placeHolder
     // TODO: increase size text
     override fun displayCocktail(drinkItem: DrinkItem) {
         textViewDrinkName.text = drinkItem.getName()
         Picasso.get()
             .load(drinkItem.getImage())
+            .placeholder(R.drawable.ic_placeholder)
             .into(imageViewDrinkImage)
         textViewDrinkInstructions.text = drinkItem.getInstructions()
         recyclerViewIngredients.adapter =
